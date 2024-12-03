@@ -1,0 +1,97 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Json from "../components/Json.astro";
+import Title from "../components/Title.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Title />
+    <Header />
+    <Json />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #a9cff3;
+  }
+
+  button {
+    background-color: #020a2a;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .header {
+    background-color: #020a2a;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: xx-large;
+  }
+
+  table {
+    align-items: center;
+    margin-left: 500px;
+  }
+
+  td {
+    padding: 10px;
+  }
+
+  .footer {
+    background-color: #020a2a;
+    color: white;
+    padding: 30px;
+    margin-top: 130px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+</style>
